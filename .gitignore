@@ -1,18 +1,313 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-# Other files and folders
-.settings/
+namespace unidad_3
+{
+    internal class Program
+    {
+        int [] numeros = new int[5];
+        static void Main(string[] args)
+        {
+            
+            int[] numeros = new int[5];
+            Console.WriteLine("ingresa el primer vector");
+            int numero0=int.Parse(Console.ReadLine());
+           Console.WriteLine("ingresa el segundo vector");
+            int numero1=int.Parse(Console.ReadLine());
+            Console.WriteLine("ingresa el tercer vector");
+            int numero2=int.Parse(Console.ReadLine());
+            Console.WriteLine("preione cualquir numero que no sea (1) por favor");
+          string  respuesta=Console.ReadLine();
+            while (respuesta != "1")
+            {
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+                Console.WriteLine("ingresa una opcion");
+                Console.WriteLine("poner numeros a la inversa presiona 1 ");
+                Console.WriteLine("para saber si el numero esta ordenado de menor a mayor presione 2");
+                Console.WriteLine("para saber si el numero esta ordenado de mayor a menor presione 3");
+                Console.WriteLine(" para saber si el numero tiene numeros repetidos presione 4");
+                Console.WriteLine(" ordenar una lista de menor a mayor presione 5");
+                Console.WriteLine("pa ra saber si un numero esta en la lista presione 6");
+                Console.WriteLine("saber el promedio de la lista presione 7");
+                int opc = int.Parse(Console.ReadLine());
+                switch (opc)
+                {
+                    case 1:
+                        Console.Clear();
+                        Console.WriteLine("inversa");
+                        Console.WriteLine("ingresa el numero de nuevo");
+                        string s = Console.ReadLine();
+                        int i = s.Length - 1;
+                        string aux = "";
+                        while (i >= 0)
+                        {
+                            aux = aux + s[i];
+                            i = i - 1;
+
+                        }
+                        Console.WriteLine("el numero alreves  " + aux);
+                        Console.ReadKey();
+                        break;
+
+                    case 2:
+                        Console.Clear();
+                        Console.WriteLine("de menor a mayor");
+                        if (numero0 < numero1 && numero0 < numero2)
+                        {
+                            if (numero1 < numero2)
+                            {
+                                Console.WriteLine(numero0);
+                                Console.WriteLine(numero1);
+                                Console.WriteLine(numero2);
+                            }
+                            else
+                            {
+                                Console.WriteLine(numero0);
+                                Console.WriteLine(numero2);
+                                Console.WriteLine(numero1);
+
+                            }
+
+                        }
+                        if (numero1 < numero0 && numero1 < numero2)
+                        {
+                            if (numero0 < numero2)
+                            {
+                                Console.WriteLine(numero1);
+                                Console.WriteLine(numero0);
+                                Console.WriteLine(numero2);
+
+                            }
+                            else
+                            {
+                                Console.WriteLine(numero1);
+                                Console.WriteLine(numero2);
+                                Console.WriteLine(numero0);
+
+                            }
+
+                        }
+                        if (numero2 < numero0 && numero2 < numero1)
+                        {
+                            if (numero0 < numero1)
+                            {
+                                Console.WriteLine(numero2);
+                                Console.WriteLine(numero0);
+                                Console.WriteLine(numero1);
+
+                            }
+                            else
+                            {
+                                Console.WriteLine(numero2);
+                                Console.WriteLine(numero1);
+                                Console.WriteLine(numero0);
+
+                            }
+
+                        }
+                        Console.ReadKey();
+                        break;
+
+                    case 3:
+                        Console.Clear();
+                        Console.WriteLine("mayor a menor");
+                        if (numero0 > numero1 && numero0 > numero2)
+                        {
+                            if (numero1 > numero2)
+                            {
+                                Console.WriteLine(numero0);
+                                Console.WriteLine(numero1);
+                                Console.WriteLine(numero2);
+                            }
+                            else
+                            {
+                                Console.WriteLine(numero0);
+                                Console.WriteLine(numero2);
+                                Console.WriteLine(numero1);
+
+                            }
+
+                        }
+                        if (numero1 > numero0 && numero1 > numero2)
+                        {
+                            if (numero0 > numero2)
+                            {
+                                Console.WriteLine(numero1);
+                                Console.WriteLine(numero0);
+                                Console.WriteLine(numero2);
+
+                            }
+                            else
+                            {
+                                Console.WriteLine(numero1);
+                                Console.WriteLine(numero2);
+                                Console.WriteLine(numero0);
+
+                            }
+
+                        }
+                        if (numero2 > numero0 && numero2 > numero1)
+                        {
+                            if (numero0 > numero1)
+                            {
+                                Console.WriteLine(numero2);
+                                Console.WriteLine(numero0);
+                                Console.WriteLine(numero1);
+
+                            }
+                            else
+                            {
+                                Console.WriteLine(numero2);
+                                Console.WriteLine(numero1);
+                                Console.WriteLine(numero0);
+
+                            }
+
+                        }
+                        Console.ReadKey();
+                        break;
+
+                    case 4:
+                        Console.Clear();
+                        Console.WriteLine("numeros repetidos");
+                        if (numero0 == numero1)
+                        {
+                            Console.WriteLine("si el numero repetido es: " + numero0);
+
+                        }
+                        if (numero1 == numero2)
+                        {
+                            Console.WriteLine("si el numero repetido es: " + numero1);
+                        }
+                        if (numero2 == numero0)
+                        {
+                            Console.WriteLine("si el numero repetido es: " + numero2);
+                        }
+                        else
+                        {
+                            Console.WriteLine("no hay numeros repetidos");
+                        }
+                        Console.ReadKey();
+                        break;
+
+                    case 5:
+                        Console.Clear();
+                        Console.WriteLine("ordenar una lista");
+                        if (numero0 < numero1 && numero0 < numero2)
+                        {
+                            if (numero1 < numero2)
+                            {
+                                Console.WriteLine("el numero en listado es");
+                                Console.WriteLine(numero0);
+                                Console.WriteLine(numero1);
+                                Console.WriteLine(numero2);
+                            }
+                            else
+                            {
+                                Console.WriteLine("el numero en listado es");
+                                Console.WriteLine(numero0);
+                                Console.WriteLine(numero2);
+                                Console.WriteLine(numero1);
+
+                            }
+
+                        }
+                        if (numero1 < numero0 && numero1 < numero2)
+                        {
+                            if (numero0 < numero2)
+                            {
+                                Console.WriteLine("el numero en listado es");
+                                Console.WriteLine(numero1);
+                                Console.WriteLine(numero0);
+                                Console.WriteLine(numero2);
+
+                            }
+                            else
+                            {
+                                Console.WriteLine("el numero en listado es");
+                                Console.WriteLine(numero1);
+                                Console.WriteLine(numero2);
+                                Console.WriteLine(numero0);
+
+                            }
+
+                        }
+                        if (numero2 < numero0 && numero2 < numero1)
+                        {
+                            if (numero0 < numero1)
+                            {
+                                Console.WriteLine("el numero en listado es");
+                                Console.WriteLine(numero2);
+                                Console.WriteLine(numero0);
+                                Console.WriteLine(numero1);
+
+                            }
+                            else
+                            {
+                                Console.WriteLine("el numero en listado es");
+                                Console.WriteLine(numero2);
+                                Console.WriteLine(numero1);
+                                Console.WriteLine(numero0);
+
+                            }
+
+                        }
+
+                        Console.ReadKey();
+                        break;
+
+                    case 6:
+                        Console.Clear();    
+                        Console.WriteLine("saber si hay un numero");
+                        Console.WriteLine("ingresa el numero que deseas saber");
+                        float n = float.Parse(Console.ReadLine());
+                        if (numero0 == n)
+                        {
+                            Console.WriteLine("si existe el numero: " + n);
+
+                        }
+                        if (numero1 == n)
+                        {
+                            Console.WriteLine("si existe el numero: " + n);
+                        }
+                        if (numero2 == n)
+                        {
+                            Console.WriteLine("si existe el numero: " + n);
+                        }
+                        else
+                        {
+                            Console.WriteLine("no hay ningun:" + n);
+                        }
+
+                        Console.ReadKey();
+                        break;
+
+                    case 7:
+                        Console.Clear();
+                        Console.WriteLine("promedio");
+                        Console.WriteLine("el promedio es: " + (numero0 + numero1 + numero2) / 3);
+
+                        Console.ReadKey();
+                        break;
+
+                    default:
+                        Console.WriteLine("opcion incorrecta");
+                        Console.ReadKey();
+                        break;
+
+                }
+                Console.WriteLine("si deses salir de el programa presiona  (1)");
+                Console.WriteLine("de querer seguir probando las opciones presione otro numero menos el (1)jjj");
+                
+                respuesta=Console.ReadLine();
+
+                Console.ReadKey();
+            }
+
+        }
+    }
+}
